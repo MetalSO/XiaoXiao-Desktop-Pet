@@ -1,0 +1,15 @@
+{
+  "id": "xiaoxiao",
+  "name": "笑笑",
+  "image": "idle.png",
+  "defaultScale": 1,
+  "bubbleLines": [
+    "我在这儿呢。",
+    "别点太快，我会紧张。",
+    "今天也要好好吃饭。",
+    "需要我陪你写会儿代码吗？",
+    "站岗中，精神很好。",
+    "刚才是不是有人在叫我？"
+  ],
+  "idleActions": ["nod", "stretch", "shake", "talk"]
+}

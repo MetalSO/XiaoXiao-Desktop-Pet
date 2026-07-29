@@ -1,0 +1,53 @@
+{
+  "name": "xiaoxiao-desktop-pet",
+  "version": "0.1.0",
+  "description": "笑笑桌宠首版：透明桌面窗口、单图轻动画、拖拽和气泡互动。",
+  "main": "out/main/main.js",
+  "author": "",
+  "license": "MIT",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "tsc --noEmit && electron-vite build",
+    "dist": "npm run build && electron-builder --win portable"
+  },
+  "dependencies": {
+    "pixi.js": "^8.8.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "@vitejs/plugin-react": "^4.3.4",
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8",
+    "electron-vite": "^3.0.0",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.5"
+  },
+  "build": {
+    "appId": "com.xiaoxiao.desktop-pet",
+    "productName": "笑笑桌宠",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "out/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "assets",
+        "to": "assets",
+        "filter": [
+          "**/*",
+          "!pets/xiaoxiao/idle-chroma.png"
+        ]
+      }
+    ],
+    "win": {
+      "target": "portable"
+    }
+  }
+}
