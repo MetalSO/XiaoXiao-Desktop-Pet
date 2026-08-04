@@ -1,4 +1,5 @@
 import { useEffect, useRef, type ReactElement } from 'react';
+import 'pixi.js/unsafe-eval';
 import { Application, Assets, Container, Sprite } from 'pixi.js';
 import type { PetConfig, PetManifest, PointerScreenPoint } from '../../shared/types';
 import {
@@ -208,7 +209,9 @@ export function PetCanvas({ config, manifest, onSpeak }: PetCanvasProps): ReactE
     host.addEventListener('pointerup', handlePointerUp);
     host.addEventListener('pointercancel', handlePointerCancel);
     window.addEventListener('resize', sizePet);
-    setup();
+    setup().catch((error: unknown) => {
+      console.error('Pixi failed to initialize the desktop pet canvas.', error);
+    });
 
     return () => {
       destroyed = true;
